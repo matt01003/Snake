@@ -31,7 +31,7 @@ class Snake:
         self.y = y
         self.body = [(x, y)]
         self.direction = RIGHT
-        self.length = 50
+        self.length = 5
 
     def move(self):
         self.x += self.direction[0]
