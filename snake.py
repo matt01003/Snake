@@ -3,9 +3,9 @@ import random
 from pygame.locals import *
 
 # Settings
-SIZE = 10
-BOARD_WIDTH = 35
-BOARD_HEIGHT = 40
+SIZE = 15
+BOARD_WIDTH = 25
+BOARD_HEIGHT = 20
 SCREEN_WIDTH = BOARD_WIDTH * SIZE
 SCREEN_HEIGHT = BOARD_HEIGHT * SIZE
 
@@ -78,8 +78,8 @@ class Food:
 
     def update_position(self, snake):
         while True:
-            x = random.randint(0, BOARD_WIDTH - SIZE) * SIZE
-            y = random.randint(0, BOARD_HEIGHT - SIZE) * SIZE
+            x = random.randint(0, BOARD_WIDTH - 1) * SIZE
+            y = random.randint(0, BOARD_HEIGHT - 1) * SIZE
             if (not ([x, y] in snake.body)):
                 break
         self.x = x
@@ -90,7 +90,7 @@ class Food:
 
 class GameScene:
     def __init__(self):
-        self.snake = Snake(100, 100)
+        self.snake = Snake(BOARD_WIDTH // 2 * SIZE, BOARD_HEIGHT // 2 * SIZE)
         self.food = Food()
         self.food.update_position(self.snake)
         self.next_scene = self
@@ -123,7 +123,6 @@ class GameScene:
 class TitleScene:
     def __init__(self, title):
         self.title = title
-        # self.fontsize = font_size
         self.next_scene = self
 
     def process_input(self, event):
@@ -159,7 +158,7 @@ class Main:
 
             # Update and tick
             pygame.display.update()
-            clock.tick(30)
+            clock.tick(15)
 
 if __name__ == '__main__':
     game = Main()
