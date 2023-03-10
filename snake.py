@@ -21,7 +21,7 @@ BLACK = (0, 0, 0)
 pygame.init()
 pygame.font.init()
 
-font_xl = pygame.font.Font("./font.ttf", 16, bold=pygame.font.Font.bold)
+font_xl = pygame.font.Font("./font.ttf", 16)
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
 
