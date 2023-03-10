@@ -1,2 +1,1 @@
-## Snake
-A snake game project made in 2015
+A snake game made in 2015
